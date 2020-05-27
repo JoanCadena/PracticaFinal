@@ -1,13 +1,40 @@
 <template>
   <div>
+    <div>
+      <b-navbar toggleable="lg" type="dark" variant="dark">
+        <img src="../static/2.png" fluid alt="Universidad de Medellín" height="55px" width="120px" />
+        <b-navbar-brand href="#"></b-navbar-brand>
+        <b-navbar-brand>Taller de Motos CadenaP</b-navbar-brand>
+
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+        <b-collapse id="nav-collapse" is-nav>
+          <b-navbar-nav>
+            <b-nav-item>|</b-nav-item>
+            <b-nav-item :to="{ name: 'funcionarios' }">Registro de funcionarios</b-nav-item>
+            <b-nav-item>|</b-nav-item>
+            <b-nav-item :to="{ name: 'motos' }">Registro de motos</b-nav-item>
+            <b-nav-item>|</b-nav-item>
+            <b-nav-item :to="{ name: 'asignacion' }">Asignación de mantenimientos</b-nav-item>
+            <b-nav-item>|</b-nav-item>
+            <b-nav-item :to="{ name: 'mantenimientos' }">Lista de mantenimientos</b-nav-item>
+            <b-nav-item>|</b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+    </div>
     <nuxt />
   </div>
 </template>
 
 <style>
+.navbar.navbar-dark.bg-dark {
+  background-color: goldenrod !important;
+}
+
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
