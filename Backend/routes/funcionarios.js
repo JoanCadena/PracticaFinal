@@ -13,6 +13,15 @@ router.get('/funcionarios', (req, resp) => {
     })
 });
 
+router.get('/funcionarios/mecanicos', (req, resp) => {
+    _controlador.consultarMecanicos().then(respuestaDB => {
+        let registros = respuestaDB.rows;
+        resp.send(registros);
+    }).catch(error => {
+        resp.send(error);
+    })
+});
+
 router.get('/funcionarios/:documento', (req, resp) => {
     let documento = req.params.documento;
     _controlador.consultarFuniconario(documento).then(respuestaDB => {
@@ -46,8 +55,6 @@ router.delete("/funcionarios/:documento", (req, resp) => {
     }).catch((error) => {
         resp.send(error);
     });
-
-
 });
 
 router.put("/funcionarios/:documento", (req, resp) => {

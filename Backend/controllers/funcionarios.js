@@ -75,6 +75,13 @@ let consultarFuncionarios = async () => {
   return respuesta;
 };
 
+let consultarMecanicos = async () => {
+  let _servicio = new ServicioPG();
+  let sql = `SELECT * FROM public.usuarios WHERE rol=1;`;
+  let respuesta = await _servicio.ejecutarSql(sql);
+  return respuesta;
+};
+
 let consultarFuncionario = async (documento) => {
   let _servicio = new ServicioPG();
   let sql = `SELECT * FROM public.usuarios WHERE documento=${documento}`;
@@ -111,6 +118,7 @@ module.exports = {
   validarFuncionario,
   guardarFuncionario,
   consultarFuncionarios,
+  consultarMecanicos,
   consultarFuncionario,
   eliminarFuncionario,
   modificarFuncionario,

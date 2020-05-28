@@ -44,6 +44,12 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  background-image: url("https://thumbs.dreamstime.com/b/rastros-de-neum%C3%A1ticos-de-coche-en-el-asfalto-textura-de-la-superficie-del-asfalto-canse-las-marcas-pisada-del-neum%C3%A1tico-marcas-97520006.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 *,
 *:before,
 *:after {
