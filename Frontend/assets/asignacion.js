@@ -165,6 +165,8 @@ export default {
     },
 
     cancelar() {
+      this.carga1 = true;
+      this.carga2 = false;
       this.mantenimiento = {
         id_mecanico: "",
         placa: "",

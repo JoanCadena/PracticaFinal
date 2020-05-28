@@ -10,15 +10,25 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item>|</b-nav-item>
-            <b-nav-item :to="{ name: 'funcionarios' }">Registro de funcionarios</b-nav-item>
+            <b-nav-item v-if="admin">|</b-nav-item>
+            <b-nav-item :to="{ name: 'funcionarios' }" v-if="admin">Registro de funcionarios</b-nav-item>
             <b-nav-item>|</b-nav-item>
             <b-nav-item :to="{ name: 'motos' }">Registro de motos</b-nav-item>
+            <b-nav-item v-if="admin">|</b-nav-item>
+            <b-nav-item :to="{ name: 'asignacion' }" v-if="admin">Asignación de mantenimientos</b-nav-item>
+            <b-nav-item v-if="mecanico">|</b-nav-item>
+            <b-nav-item :to="{ name: 'mantenimientos' }" v-if="mecanico">Lista de mantenimientos</b-nav-item>
             <b-nav-item>|</b-nav-item>
-            <b-nav-item :to="{ name: 'asignacion' }">Asignación de mantenimientos</b-nav-item>
-            <b-nav-item>|</b-nav-item>
-            <b-nav-item :to="{ name: 'mantenimientos' }">Lista de mantenimientos</b-nav-item>
-            <b-nav-item>|</b-nav-item>
+          </b-navbar-nav>
+
+          <b-navbar-nav class="ml-auto">
+              <b-nav-item-dropdown right>
+              <template v-slot:button-content>
+                <em>Ingresar</em>
+              </template>
+              <b-dropdown-item @click="loginMecanico()">Mecanico</b-dropdown-item>
+              <b-dropdown-item @click="loginAdmin()">Admininistrador</b-dropdown-item>
+            </b-nav-item-dropdown>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -26,6 +36,8 @@
     <nuxt />
   </div>
 </template>
+
+<script src="@/assets/default.js" />
 
 <style>
 .navbar.navbar-dark.bg-dark {

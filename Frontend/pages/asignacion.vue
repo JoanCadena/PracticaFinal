@@ -88,6 +88,7 @@
 
         <center>
           <b-button size="sm" type="submit" variant="primary">Actualizar</b-button>
+          <b-button size= "sm" @click="cancelar()" variant="danger" v-if="carga2">Cancelar</b-button>
         </center>
       </b-form>
       <hr />
